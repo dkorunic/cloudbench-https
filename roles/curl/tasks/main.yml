@@ -1,0 +1,16 @@
+- name: wait for automatic system updates
+  shell: while pgrep unattended; do sleep 5; done;
+
+- name: install curl
+  apt:
+    name: curl
+    state: present
+    update_cache: yes
+
+- name: run curl
+  shell: "curl -w 'dns:%{time_namelookup} tcpconn:%{time_connect} sslconn:%{time_appconnect} prexfr:%{time_pretransfer} startxfr:%{time_starttransfer} total:%{time_total}\n' -o /dev/null -s -k {{ test_url }}"
+  register: curl_out
+  warn: False
+
+- debug:
+    msg: "{{ ec2_public_dns_name }}/{{ ec2_placement }}: {{ curl_out.stdout }}"

@@ -1,0 +1,7 @@
+- name: do a full HTTP/HTTPS trace and return results
+  hosts: tag_Name_cloudbench_test_node
+  become: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  roles:
+    - curl

@@ -1,0 +1,7 @@
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+*.tfvars
+site.retry
+.DS_Store
+.vscode/
