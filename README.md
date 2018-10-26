@@ -39,6 +39,8 @@ Configure remote Web site URL in `roles/curl/defaults/main.yml`, parameter to mo
  
 Make sure you have AWS credentials configured in `$HOME/.aws/credentials`.
 
+Replace `public_key` in `cloudbench/module.tf` file with the contents of your `$HOME/.ssh/id_rsa.pub` file to be able to connect with Ansible to remote EC2 instances.
+
 Initialize Terraform:
 
 ```shell
