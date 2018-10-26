@@ -3,7 +3,7 @@ cloudbench-https
 
 ## About
 
-cloudbench-https in a poor-man Pingdom report tool, aimed at spawning AWS EC2 instances in every public region and availability zone (at this moment of speaking 64 of them) and testing Web site performance, giving out various timing information available from Curl timers.
+cloudbench-https in a poor-man Pingdom-like reporting tool, aimed at spawning AWS EC2 instances in every public region and availability zone (at this moment of speaking 64 of them) and testing Web site reachability performance, displaying various timing information available from Curl timers in regards to DNS, TCP, SSL/TLS and TTFB information.
 
 This stack consists of [Terraform](https://www.terraform.io/) infrastructure code that spawns 64+ EC2 instances with preferring single EC2 **t2.micro** instance per AZ and [Ansible](https://www.ansible.com/) playbook that configures software and runs test, delivering remote site timing information as final results.
 
